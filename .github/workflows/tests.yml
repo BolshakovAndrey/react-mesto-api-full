@@ -1,0 +1,39 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  sprint_13:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+        mongodb-version: ['4.4']
+    steps:
+    - name: Set up GitHub Actions
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Сheck if the repository is private
+      run: exit 1
+      if: ${{github.event.repository.private}}
+    - name: Get testing lib
+      run: set -eu && git clone https://github.com/Yandex-Practicum/web-autotest-public.git
+    - name: Start MongoDB
+      uses: supercharge/mongodb-github-action@1.6.0
+      with:
+        mongodb-version: ${{ matrix.mongodb-version }}
+    - name: Installing pnpm
+      run: npm install -g pnpm
+    - name: Installing Dependencies
+      run: pnpm i -f
+    - name: Run server
+      run: pnpm run start &
+    - name: Run test
+      run: ./web-autotest-public/run.sh.x
