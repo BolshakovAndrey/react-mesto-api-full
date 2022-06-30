@@ -1,0 +1,5 @@
+.popup__btn-close_type_show-image {
+  margin-left: calc(100% - 16px);
+  margin-bottom: 8px;
+  position: unset;
+}

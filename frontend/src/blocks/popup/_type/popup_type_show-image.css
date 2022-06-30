@@ -1,0 +1,6 @@
+.popup_type_show-img {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+}

@@ -1,0 +1,9 @@
+.page__button {
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+
+.page__button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
