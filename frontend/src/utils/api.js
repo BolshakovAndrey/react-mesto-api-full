@@ -106,9 +106,10 @@ class Api {
 }
 
 const api = new Api({
-    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-38',
+    // baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-38',
+    baseUrl: 'https://api.bolshakov.nomoredomains.xyz',
     headers: {
-        authorization: 'de2e0062-ca04-428a-8046-f246c54d9ab2',
+        // authorization: 'de2e0062-ca04-428a-8046-f246c54d9ab2',
         'Content-Type': 'application/json'
     }
 });

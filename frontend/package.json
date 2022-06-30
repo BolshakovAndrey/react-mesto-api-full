@@ -1,5 +1,5 @@
 {
-  "name": "react-mesto-auth",
+  "name": "react-mesto-api-full",
   "homepage": "https://bolshakovandrey.github.io/react-mesto-auth/",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "scp -r ./build/* bolshakov@51.250.99.220:/home/bolshakov/mesto-frontend"
+    "deploy": "npm run build && scp -r ./build/* bolshakov@51.250.99.220:/home/bolshakov/react-mesto-api-full/frontend"
   },
   "eslintConfig": {
     "extends": [
