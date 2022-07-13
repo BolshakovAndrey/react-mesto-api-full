@@ -1,9 +1,0 @@
-.form_type_auth {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  align-items: center;
-  padding: 60px 0;
-}
