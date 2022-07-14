@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
   avatar: {
     type: String,
     required: [true, 'Добавьте аватар'],
-    default: 'https://pictures.s3.yandex.net/resources/jacques-cousteau_1604399756.png',
+    default: 'https://avatars.mds.yandex.net/i?id=10273b96dc3c9a61800af3d0c1e79805-5219071-images-thumbs&n=13',
     validate: {
       validator: (v) => isURL(v),
       message: 'Некорректный адрес картинки',
