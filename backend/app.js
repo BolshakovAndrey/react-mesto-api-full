@@ -10,6 +10,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { login, createUser } = require('./controllers/users');
 const regex = require('./utils/constants');
+const routes = require('./routes/index');
 
 const { PORT = 3000 } = process.env;
 
@@ -48,9 +49,7 @@ app.post('/signup', celebrate({
   }),
 }), createUser);
 
-app.use('/users', auth, require('./routes/user'));
-
-app.use('/cards', auth, require('./routes/card'));
+app.use(routes);
 
 app.use(auth, (req, res, next) => {
   next(new NotFoundError('Запрашиваемой страницы не существует'));
